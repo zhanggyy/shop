@@ -17,8 +17,12 @@
 </template>
 
 <script>
+import index from './index.vue'
 export default {
 name: "Login",
+  components: {
+  index,
+  },
   data () {
   return {
     form: {
@@ -40,14 +44,15 @@ name: "Login",
   methods: {
     onSubmit(formName) {
       this.$refs[formName].validate((valid) => {
-        if (valid) {
-          alert('登录成功!');
+        if (valid && this.form.name === 'ceshi' && this.form.password === '111111') {
+          this.$router.push({name: 'index'})
+          this.$message.success('登录成功!');
         } else {
           this.$message.error('用户名或密码格式不正确！');
           return false;
         }
       })
-    }
+    },
   }
 }
 </script>
@@ -60,7 +65,7 @@ name: "Login",
   margin: 150px auto;
   padding: 20px 50px 20px 30px;
   border-radius: 20px;
-  box-shadow: 0px 0px 20px #DCDFE6;
+  box-shadow: 0 0 20px #DCDFE6;
 }
 .loginTitle {
   text-align: center;

@@ -1,15 +1,15 @@
 <template>
 <div class="login-box">
-  <el-form ref="form" :model="form" label-width="80px">
+  <el-form ref="form" :model="form" :rules="rules" label-width="80px">
     <h3 class="loginTitle">欢迎登录</h3>
-    <el-form-item label="用户名">
+    <el-form-item label="用户名" prop="name">
       <el-input v-model="form.name" placeholder="请输入用户名"></el-input>
     </el-form-item>
-<el-form-item label="密码" >
+<el-form-item label="密码" prop="password">
   <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
 </el-form-item>
     <el-form-item align="right">
-      <el-button type="primary" @click="onSubmit">登录</el-button>
+      <el-button type="primary" @click="onSubmit('form')">登录</el-button>
       <el-button>取消</el-button>
     </el-form-item>
   </el-form>
@@ -24,12 +24,29 @@ name: "Login",
     form: {
       name: '',
       password: ''
+    },
+    rules: {
+      name:[
+      { required: true, message: '请输入用户名', trigger: 'blur' },
+      { min: 3, max: 12, message: '长度在 3 到 12 个字符', trigger: 'blur' }
+    ],
+      password: [
+        { required: true, message: '请输入密码', trigger: 'blur' },
+        { min: 6, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur' }
+      ]
     }
   }
   },
   methods: {
-    onSubmit() {
-      console.log('submit!');
+    onSubmit(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          alert('登录成功!');
+        } else {
+          this.$message.error('用户名或密码格式不正确！');
+          return false;
+        }
+      })
     }
   }
 }

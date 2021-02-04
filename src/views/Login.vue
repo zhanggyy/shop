@@ -6,7 +6,8 @@
       <el-input v-model="form.name" placeholder="请输入用户名"></el-input>
     </el-form-item>
 <el-form-item label="密码" prop="password">
-  <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
+  <el-input
+      type="password" v-model="form.password" placeholder="请输入密码"></el-input>
 </el-form-item>
     <el-form-item align="right">
       <el-button type="primary" @click="onSubmit('form')">登录</el-button>
@@ -17,44 +18,46 @@
 </template>
 
 <script>
-import index from './index.vue'
+import index from './index.vue';
 export default {
-name: "Login",
+  name: 'Login',
   components: {
-  index,
+    // eslint-disable-next-line vue/no-unused-components
+    index,
   },
-  data () {
-  return {
-    form: {
-      name: '',
-      password: ''
-    },
-    rules: {
-      name:[
-      { required: true, message: '请输入用户名', trigger: 'blur' },
-      { min: 3, max: 12, message: '长度在 3 到 12 个字符', trigger: 'blur' }
-    ],
-      password: [
-        { required: true, message: '请输入密码', trigger: 'blur' },
-        { min: 6, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur' }
-      ]
-    }
-  }
+  data() {
+    return {
+      form: {
+        name: '',
+        password: '',
+      },
+      rules: {
+        name: [
+          {required: true, message: '请输入用户名', trigger: 'blur'},
+          {min: 3, max: 12, message: '长度在 3 到 12 个字符', trigger: 'blur'},
+        ],
+        password: [
+          {required: true, message: '请输入密码', trigger: 'blur'},
+          {min: 6, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur'},
+        ],
+      },
+    };
   },
   methods: {
     onSubmit(formName) {
       this.$refs[formName].validate((valid) => {
+        // eslint-disable-next-line max-len
         if (valid && this.form.name === 'ceshi' && this.form.password === '111111') {
-          this.$router.push({name: 'index'})
+          this.$router.push({name: 'index'});
           this.$message.success('登录成功!');
         } else {
           this.$message.error('用户名或密码格式不正确！');
           return false;
         }
-      })
+      });
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>

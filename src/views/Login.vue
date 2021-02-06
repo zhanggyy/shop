@@ -47,9 +47,9 @@ export default {
     onSubmit(formName) {
       this.$refs[formName].validate((valid) => {
         // eslint-disable-next-line max-len
-        if (valid && this.form.name === 'ceshi' && this.form.password === '111111') {
-          this.$router.push({name: 'index'});
+        if (valid && this.form.name === 'admin' && this.form.password === '111111') {
           this.$message.success('登录成功!');
+          this.$router.push({name: 'index'}); // 跳转到首页
         } else {
           this.$message.error('用户名或密码格式不正确！');
           return false;

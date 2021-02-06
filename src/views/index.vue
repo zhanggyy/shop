@@ -121,7 +121,7 @@ export default {
       console.log(111111, key, keyPath);
     },
     onClick(item) {
-      this.$router.push({path: 'goods', query: {name: item.name}});
+      this.$router.push({path: '/goods', query: {name: item.name}});
     },
   },
 };

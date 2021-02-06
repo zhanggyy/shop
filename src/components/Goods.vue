@@ -71,88 +71,88 @@
   </div>
 </template>
 <script>
-import config from '@/config/config'
+import config from '@/config/config';
 export default {
   name: 'Goods',
-  data () {
+  data() {
     return {
       actorIndex: 0,
       quantity: 1,
       isCart: false, // 生成动态类名
       isOrder: false, // 生成动态类名
       cart: [],
-      order: []
-    }
+      order: [],
+    };
   },
-  mounted () {
-    this.$nextTick(function () {
-      this.getStore()
+  mounted() {
+    this.$nextTick(function() {
+      this.getStore();
       // 监听器作用：当分身动画结束后，去除动画类名
       this.$refs.animPart.addEventListener('animationend', () => {
-        this.isCart = false
-        this.isOrder = false
-      })
-    })
+        this.isCart = false;
+        this.isOrder = false;
+      });
+    });
   },
   computed: {
-    item () {
-      return config.goods.find(item => item.name === this.$route.query.name)
+    item() {
+      return config.goods.find((item) => item.name === this.$route.query.name);
     },
-    thumbnails () {
-      return this.item.thumbnails
+    thumbnails() {
+      return this.item.thumbnails;
     },
-    actorC () {
-      return this.item.images[this.actorIndex]
+    actorC() {
+      return this.item.images[this.actorIndex];
     },
-    result () {
+    result() {
       return {
         cover: this.item.cover,
         text: this.item.text,
         type: this.item.type,
         price: this.item.onlinePrice,
-        quantity: this.quantity
-      }
-    }
+        quantity: this.quantity,
+      };
+    },
   },
   methods: {
-    getStore () {
-      let gsStore = window.localStorage.getItem('gsStore')
+    getStore() {
+      let gsStore = window.localStorage.getItem('gsStore');
       if (gsStore) {
-        gsStore = JSON.parse(gsStore)
-        this.cart = gsStore.cart || []
-        this.order = gsStore.order || []
+        gsStore = JSON.parse(gsStore);
+        this.cart = gsStore.cart || [];
+        this.order = gsStore.order || [];
       }
     },
-    setStore () {
-      let gsStore = {
+    setStore() {
+      const gsStore = {
         cart: this.cart,
-        order: this.order
-      }
-      window.localStorage.setItem('gsStore', JSON.stringify(gsStore))
+        order: this.order,
+      };
+      window.localStorage.setItem('gsStore', JSON.stringify(gsStore));
     },
-    toggleActor (index) {
-      this.actorIndex = index
+    toggleActor(index) {
+      this.actorIndex = index;
     },
-    checkQuantity () {
+    checkQuantity() {
       if (this.quantity < 1 || isNaN(this.quantity)) {
-        this.quantity = 1
+        this.quantity = 1;
       }
     },
-    addInCart () {
-      this.isCart = true
-      this.cart.push(this.result)
-      this.setStore()
+    addInCart() {
+      this.isCart = true;
+      this.cart.push(this.result);
+      this.setStore();
     },
-    addInOrder () {
-      this.isOrder = true
-      this.order.push(this.result)
-      this.setStore()
-    }
-  }
-}
+    addInOrder() {
+      this.isOrder = true;
+      this.order.push(this.result);
+      this.setStore();
+    },
+  },
+};
 </script>
 
-<style scoped lang="less">
+<style scoped>
   .container {
     width: 1120px;
     margin-left: auto;

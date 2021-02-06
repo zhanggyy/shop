@@ -24,10 +24,13 @@
           <el-menu-item index="7">手机京东</el-menu-item>
         </el-menu>
 <!--        搜索一行-->
-        <div>我是搜索栏</div>
+
       </el-header>
 
       <el-main>
+        <div>
+          <el-input v-model="input" placeholder="请输入内容"></el-input>
+        </div>
 <!--        第一个模块-->
         <div class="wrap">
 <!--          轮播图左边列表-->
@@ -56,7 +59,25 @@
           </div>
         </div>
 <!--        第二个模块-->
-        <div>22222</div>
+        <div class="rec-banner">
+          <h1 class="banner-title">精品推荐</h1>
+          <ul class="rec-list">
+            <li
+                class="rec-card"
+                v-for="(item,index) in goods"
+                :key="index"
+                @click="onClick(item)">
+              <el-image :src="item.cover" class="rec-media" />
+              <div class="rec-profile">
+                <h4>{{item.text}}</h4>
+                <p class="rec-params">
+                  原价：<span class="rec-price">¥{{item.price}}</span>
+                  促销价：<span class="rec-online-price">¥{{item.onlinePrice}}</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
 
 <!--        第三个模块-->
         <div>333333</div>
@@ -78,12 +99,13 @@ export default {
     return {
       navMenu: '1',
       imagesBox: [
-        {id: 0, idView: require('../assets/lbt1.jpg')},
-        {id: 1, idView: require('../assets/lbt2.jpg')},
-        {id: 2, idView: require('../assets/lbt3.jpg')},
-        {id: 3, idView: require('../assets/lbt4.jpg')},
-        {id: 4, idView: require('../assets/lbt5.jpg')},
+        {id: 0, idView: require('../assets/banner/lbt1.jpg')},
+        {id: 1, idView: require('../assets/banner/lbt2.jpg')},
+        {id: 2, idView: require('../assets/banner/lbt3.jpg')},
+        {id: 3, idView: require('../assets/banner/lbt4.jpg')},
+        {id: 4, idView: require('../assets/banner/lbt5.jpg')},
       ],
+      input: '', // 搜索
     };
   },
   computed: {
@@ -97,6 +119,9 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(111111, key, keyPath);
+    },
+    onClick(item) {
+      this.$router.push({path: 'goods', query: {name: item.name}});
     },
   },
 };
@@ -152,5 +177,45 @@ li {
 .image {
   height: 100%;
   width: 100%;
+}
+/*第二模块*/
+.rec-banner {
+  margin: 30px auto;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  width: 1120px;
+  background-color: #fff;
+}
+.banner-title {
+  padding: 8px 15px;
+}
+.rec-list {
+  list-style: none;
+}
+.rec-card {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+}
+.rec-media {
+  width: 240px;
+}
+.rec-profile {
+  width: 200px;
+  display: inline-block;
+  color: #444;
+}
+.rec-price {
+  text-decoration: line-through;
+}
+.rec-online-price {
+  color: #ff0036;
+  font-size: 16px;
+}
+.rec-params {
+  font-size: 12px;
+  color: #888;
 }
 </style>

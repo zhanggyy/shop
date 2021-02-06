@@ -30,108 +30,19 @@
       <el-main>
 <!--        第一个模块-->
         <div class="wrap">
-        <div class="left">
-<!--          这是轮播图左侧商品列表-->
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item><a href="#">家用电器</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">手机</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">运营商</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">数码</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">电视</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">电脑</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">办公</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">家居</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">家具</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">家装</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">厨具</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">男装</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">女装</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">童装</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">内衣</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">美妆</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">个护清洁</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">宠物</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-          <el-breadcrumb-item :to="{ path: '/' }">女鞋</el-breadcrumb-item>
-          <el-breadcrumb-item><a href="#">箱包</a></el-breadcrumb-item>
-          <el-breadcrumb-item><a href="#">钟表</a></el-breadcrumb-item>
-          <el-breadcrumb-item><a href="#">珠宝</a></el-breadcrumb-item>
-        </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">男鞋</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">运动</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">户外</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">房产</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">汽车</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">汽车用品</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">自行车</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">母婴</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">玩具乐器</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">食品</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">酒类</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">生鲜</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">特产</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">艺术</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">礼品</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">鲜花</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">农资绿植</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">医药保健</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">计生情趣</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-          <el-breadcrumb-item :to="{ path: '/' }">图书</el-breadcrumb-item>
-          <el-breadcrumb-item><a href="#">文娱</a></el-breadcrumb-item>
-          <el-breadcrumb-item><a href="#">教育</a></el-breadcrumb-item>
-          <el-breadcrumb-item><a href="#">电子书</a></el-breadcrumb-item>
-        </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">机票</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">酒店</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">旅游</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">生活</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">理财</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">众筹</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">白条</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">保险</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">安装</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">维修</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">清洗</a></el-breadcrumb-item>
-            <el-breadcrumb-item><a href="#">二手</a></el-breadcrumb-item>
-          </el-breadcrumb>
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item><a href="#">工业品</a></el-breadcrumb-item>
-          </el-breadcrumb>
-        </div>
+<!--          轮播图左边列表-->
+        <ul class="left">
+          <li
+              v-for="(item, index) in navBars"
+              :key="index"
+              class="cate-nav-item">
+            {{item.text}}</li>
+        </ul>
 <!--          轮播图-->
           <div class="main">
             <el-carousel height="470px">
-            <el-carousel-item v-for="item in imagesBox" :key="item.id" >
-              <img :src="item.idView" class="image" fit="fill">
+            <el-carousel-item v-for="item in imagesBox" :key="item.id">
+              <el-image :src="item.idView" class="image" fit="fill" />
             </el-carousel-item>
           </el-carousel>
           </div>
@@ -160,6 +71,7 @@
 </template>
 
 <script>
+import config from '@/config/config';
 export default {
   name: 'index',
   data() {
@@ -172,8 +84,15 @@ export default {
         {id: 3, idView: require('../assets/lbt4.jpg')},
         {id: 4, idView: require('../assets/lbt5.jpg')},
       ],
-      fiveNews: [],
     };
+  },
+  computed: {
+    navBars() {
+      return config.navBars;
+    },
+    goods() {
+      return config.goods;
+    },
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -184,6 +103,9 @@ export default {
 </script>
 
 <style scoped>
+li {
+  list-style-type:none;
+}
 .fit {
   height: 100%;
   width: 100%;
@@ -197,9 +119,20 @@ export default {
   display: flex;
 }
 .left {
+  margin-block-start: 0;
+  margin-block-end: 0;
   height: 100%;
   width:25%;
   background-color: #ffd04b;
+}
+.cate-nav-item {
+  line-height: 29px;
+  color: #fff;
+  cursor: pointer;
+}
+.cate-nav-item:hover {
+  color: #787878;
+  background-color: rgba(255, 255, 255, .8);
 }
 .main {
   height: 100%;
@@ -219,8 +152,5 @@ export default {
 .image {
   height: 100%;
   width: 100%;
-}
-.carousel {
-  height: 100%;
 }
 </style>

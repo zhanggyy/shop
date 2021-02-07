@@ -142,11 +142,13 @@ export default {
       this.isCart = true;
       this.cart.push(this.result);
       this.setStore();
+      this.$router.push({path: '/goods'})
     },
     addInOrder() {
       this.isOrder = true;
       this.order.push(this.result);
       this.setStore();
+      this.$router.push({path: '/order'})
     },
   },
 };

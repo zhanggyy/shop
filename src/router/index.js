@@ -1,10 +1,11 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Login from '@/views/Login';
-import index from '@/views/index';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Login from '@/views/Login'
+import index from '@/views/index'
 import Goods from '@/components/Goods'
 import Cart from '@/components/Cart'
 import Order from '@/components/Order'
+import Checkbox from "@/components/Checkbox";
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ const routes = [
 		path: '/cart',
 		name: 'Cart',
 		component: Cart,
+	},
+	{
+		path: '/Checkbox',
+		name: 'Checkbox',
+		component: Checkbox,
 	},
 	{
 		path: '/order',

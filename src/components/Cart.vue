@@ -111,6 +111,7 @@ export default {
       this.checkedArray.splice(index, 1)
       this.order.push(item)
       this.setStore()
+      this.$router.push({path: '/order'})
     },
     payAll () {
       let inCart = []
@@ -120,6 +121,7 @@ export default {
       this.cart = inCart
       this.setCheckedArray()
       this.setStore()
+      this.$router.push({path: '/order'})
     }
   }
 }

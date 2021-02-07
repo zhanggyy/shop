@@ -61,7 +61,7 @@ export default {
       price: '536.00',
       onlinePrice: '208.00',
       cover: require('../assets/images/nuotai01.jpg'),
-      poster: '../assets/images/slide01.png',
+      poster: require('../assets/images/slide01.png'),
       color: '#e8e8e8',
       images: [
         require('../assets/images/nuotai01.jpg'),
@@ -86,7 +86,7 @@ export default {
       price: '48.90',
       onlinePrice: '43.90',
       cover: require('../assets/images/qixi01.jpg'),
-      poster: '../assets/images/slide02.png',
+      poster: require('../assets/images/slide02.png'),
       color: '#17b14f',
       images: [
         require('../assets/images/qixi01.jpg'),
@@ -111,7 +111,7 @@ export default {
       price: '800.00',
       onlinePrice: '600.00',
       cover: require('../assets/images/bama01.jpg'),
-      poster: '../assets/images/slide03.png',
+      poster: require('../assets/images/slide03.png'),
       color: '#e8e8e8',
       images: [
         require('../assets/images/bama01.jpg'),
@@ -136,7 +136,7 @@ export default {
       price: '350.00',
       onlinePrice: '239.00',
       cover: require('../assets/images/Lee01.jpg'),
-      poster: '../assets/images/slide04.png',
+      poster: require('../assets/images/slide04.png'),
       color: '#96520c',
       images: [
         require('../assets/images/Lee01.jpg'),

@@ -88,7 +88,7 @@ export default {
     this.$nextTick(function() {
       this.getStore();
       // 监听器作用：当分身动画结束后，去除动画类名
-      this.$refs.animPart.addEventListener('animationend', () => {
+      this.$refs.animPart?.addEventListener('animationend', () => {
         this.isCart = false;
         this.isOrder = false;
       });
@@ -99,17 +99,17 @@ export default {
       return config.goods.find((item) => item.name === this.$route.query.name);
     },
     thumbnails() {
-      return this.item.thumbnails;
+      return this.item?.thumbnails;
     },
     actorC() {
-      return this.item.images[this.actorIndex];
+      return this.item?.images[this.actorIndex];
     },
     result() {
       return {
-        cover: this.item.cover,
-        text: this.item.text,
-        type: this.item.type,
-        price: this.item.onlinePrice,
+        cover: this.item?.cover,
+        text: this.item?.text,
+        type: this.item?.type,
+        price: this.item?.onlinePrice,
         quantity: this.quantity,
       };
     },
@@ -142,7 +142,7 @@ export default {
       this.isCart = true;
       this.cart.push(this.result);
       this.setStore();
-      this.$router.push({path: '/goods'})
+      this.$router.push({path: '/cart'})
     },
     addInOrder() {
       this.isOrder = true;

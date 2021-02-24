@@ -23,11 +23,9 @@
           <el-menu-item index="6">网站导航</el-menu-item>
           <el-menu-item index="7">手机京东</el-menu-item>
         </el-menu>
-<!--        搜索一行-->
-
       </el-header>
-
       <el-main>
+<!--        搜索一行-->
         <div>
           <el-input v-model="input" placeholder="请输入内容"></el-input>
         </div>
@@ -79,13 +77,68 @@
           </ul>
         </div>
 
-<!--        第三个模块-->
-        <div>333333</div>
+<!--        第三个模块 复制第二个模块 以后可以再修改-->
+        <div class="rec-banner">
+          <h1 class="banner-title">精品推荐</h1>
+          <ul class="rec-list">
+            <li
+                class="rec-card"
+                v-for="(item,index) in goods"
+                :key="index"
+                @click="onClick(item)">
+              <el-image :src="item.cover" class="rec-media" />
+              <div class="rec-profile">
+                <h4>{{item.text}}</h4>
+                <p class="rec-params">
+                  原价：<span class="rec-price">¥{{item.price}}</span>
+                  促销价：<span class="rec-online-price">¥{{item.onlinePrice}}</span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </el-main>
 
       <el-footer>
 <!--        这是页尾-->
-        <div></div>
+        <div class="allUl">
+          <ul class="footerUl">
+            <li class="firstLi">购物指南</li>
+            <li>购物流程</li>
+            <li>会员介绍</li>
+            <li>生活旅行</li>
+            <li>常见问题</li>
+            <li>大家电</li>
+            <li>联系客服</li>
+          </ul>
+          <ul class="footerUl">
+            <li class="firstLi">配送方式</li>
+            <li>上门自提</li>
+            <li>211限时达</li>
+            <li>配送费收取标准</li>
+            <li>海外配送</li>
+          </ul>
+          <ul class="footerUl">
+            <li class="firstLi">售后服务</li>
+            <li>售后政策</li>
+            <li>价格保护</li>
+            <li>退款说明</li>
+            <li>返修/退换货</li>
+            <li>取消订单</li>
+          </ul>
+          <ul class="footerUl">
+            <li class="firstLi">特色服务</li>
+            <li>夺宝岛</li>
+            <li>DIY装机</li>
+            <li>延保服务</li>
+            <li>京东E卡</li>
+            <li>京东通信</li>
+          </ul>
+          <ul class="footerUl">
+            <li class="firstLi">京东自营覆盖县区</li>
+            <li>京东已向全国2661个区县提供自营配送服务，支持活到付款、POS机刷卡和售后上门服务。</li>
+          </ul>
+        </div>
       </el-footer>
   </el-container>
 </div>
@@ -217,5 +270,16 @@ li {
 .rec-params {
   font-size: 12px;
   color: #888;
+}
+/*页尾*/
+.footerUl {
+  float: left;
+  margin-left: 30px;
+}
+.allUl {
+  overflow:hidden;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  margin-bottom: 30px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
 <div class="fit">
   <el-container>
-      <el-header>
+      <el-header style="border: 1px solid RGB(244,244,244)">
 <!--        菜单栏-->
         <el-menu
             :default-active="navMenu"
@@ -26,8 +26,22 @@
       </el-header>
       <el-main>
 <!--        搜索一行-->
-        <div>
-          <el-input v-model="input" placeholder="请输入内容"></el-input>
+        <div class="inSearch">
+            <el-image
+            style="width: 70px;height: 70px;float: left;margin-left: 165px"
+            :src="require('../assets/images/jd_logo.jpg')"
+            ></el-image>
+          <el-input
+              style="float: left;width: 490px;margin-left: 130px"
+              v-model="isInput"
+              placeholder="请输入内容"></el-input>
+          <el-button style="float: left" type="primary" icon="el-icon-search"></el-button>
+          <el-badge :value="0" class="noteItem">
+          <el-button type="primary">
+              <i class="el-icon-shopping-cart-2 el-icon--left"></i>
+            我的购物车
+          </el-button>
+          </el-badge>
         </div>
 <!--        第一个模块-->
         <div class="wrap">
@@ -103,40 +117,40 @@
 <!--        这是页尾-->
         <div class="allUl">
           <ul class="footerUl">
-            <li class="firstLi">购物指南</li>
-            <li>购物流程</li>
-            <li>会员介绍</li>
-            <li>生活旅行</li>
-            <li>常见问题</li>
-            <li>大家电</li>
-            <li>联系客服</li>
+            <li class="firstLi"><a href="#">购物指南</a></li>
+            <li><a href="#">购物流程</a></li>
+            <li><a href="#">会员介绍</a></li>
+            <li><a href="#">生活旅行</a></li>
+            <li><a href="#">常见问题</a></li>
+            <li><a href="#">大家电</a></li>
+            <li><a href="#">联系客服</a></li>
           </ul>
           <ul class="footerUl">
-            <li class="firstLi">配送方式</li>
-            <li>上门自提</li>
-            <li>211限时达</li>
-            <li>配送费收取标准</li>
-            <li>海外配送</li>
+            <li class="firstLi"><a href="#">配送方式</a></li>
+            <li><a href="#">上门自提</a></li>
+            <li><a href="#">211限时达</a></li>
+            <li><a href="#">配送费收取标准</a></li>
+            <li><a href="#">海外配送</a></li>
           </ul>
           <ul class="footerUl">
-            <li class="firstLi">售后服务</li>
-            <li>售后政策</li>
-            <li>价格保护</li>
-            <li>退款说明</li>
-            <li>返修/退换货</li>
-            <li>取消订单</li>
+            <li class="firstLi"><a href="#">售后服务</a></li>
+            <li><a href="#">售后政策</a></li>
+            <li><a href="#">价格保护</a></li>
+            <li><a href="#">退款说明</a></li>
+            <li><a href="#">返修/退换货</a></li>
+            <li><a href="#">取消订单</a></li>
           </ul>
           <ul class="footerUl">
-            <li class="firstLi">特色服务</li>
-            <li>夺宝岛</li>
-            <li>DIY装机</li>
-            <li>延保服务</li>
-            <li>京东E卡</li>
-            <li>京东通信</li>
+            <li class="firstLi"><a href="#">特色服务</a></li>
+            <li><a href="#">夺宝岛</a></li>
+            <li><a href="#">DIY装机</a></li>
+            <li><a href="#">延保服务</a></li>
+            <li><a href="#">京东E卡</a></li>
+            <li><a href="#">京东通信</a></li>
           </ul>
           <ul class="footerUl">
-            <li class="firstLi">京东自营覆盖县区</li>
-            <li>京东已向全国2661个区县提供自营配送服务，支持活到付款、POS机刷卡和售后上门服务。</li>
+            <li class="firstLi"><a href="#">京东自营覆盖县区</a></li>
+            <li><a href="#">京东已向全国2661个区县提供自营配送服务，支持活到付款、POS机刷卡和售后上门服务。</a></li>
           </ul>
         </div>
       </el-footer>
@@ -158,7 +172,7 @@ export default {
         {id: 3, idView: require('../assets/banner/lbt4.jpg')},
         {id: 4, idView: require('../assets/banner/lbt5.jpg')},
       ],
-      input: '', // 搜索
+      isInput: '', // 搜索
     };
   },
   computed: {
@@ -184,28 +198,39 @@ export default {
 li {
   list-style-type:none;
 }
+a {
+  text-decoration:none;
+  color:#333;
+  font-size: 12px;
+}
 .fit {
   height: 100%;
   width: 100%;
+  background-color: RGB(244,244,244);
+}
+.inSearch {
+  background-color: #fff;
+}
+.noteItem {
+  margin-top: 10px;
+  margin-right: 40px;
 }
 /*第一模块的布局*/
 .wrap {
   height: 470px;
   width: 100%;
-  background-color: gray;
   text-align: center;
   display: flex;
+  background-color: #fff;
 }
 .left {
   margin-block-start: 0;
   margin-block-end: 0;
   height: 100%;
   width:25%;
-  background-color: #ffd04b;
 }
 .cate-nav-item {
   line-height: 29px;
-  color: #fff;
   cursor: pointer;
 }
 .cate-nav-item:hover {
@@ -214,7 +239,6 @@ li {
 }
 .main {
   height: 100%;
-  background-color: #ce8a99;
   flex:1
 }
 .right {
@@ -223,8 +247,9 @@ li {
   background-color: #5aaaaa;;
 }
 .menu {
-  background-color: gray;
+  background-color: RGB(244,244,244);
   text-color: #fff;
+  float: right;
   active-text-color: #ffd04b;
 }
 .image {
@@ -236,8 +261,8 @@ li {
   margin: 30px auto;
   padding-top: 30px;
   padding-bottom: 50px;
-  width: 1120px;
-  background-color: #fff;
+  width: 100%;
+  background-color: RGB(244,244,244);
 }
 .banner-title {
   padding: 8px 15px;
@@ -272,14 +297,15 @@ li {
   color: #888;
 }
 /*页尾*/
-.footerUl {
-  float: left;
-  margin-left: 30px;
-}
 .allUl {
+  background-color: RGB(244,244,244);
   overflow:hidden;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   margin-bottom: 30px;
+}
+.footerUl {
+  float: left;
+  margin-left: 80px;
 }
 </style>

@@ -185,7 +185,7 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(111111, key, keyPath);
+      console.log(1111111, key, keyPath);
     },
     onClick(item) {
       this.$router.push({path: '/goods', query: {name: item.name}});
